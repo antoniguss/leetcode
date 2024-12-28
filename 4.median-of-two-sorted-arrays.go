@@ -1,4 +1,4 @@
-package main
+// @leet start
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	length := len(nums1) + len(nums2)
@@ -27,10 +27,13 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 		k++
 		j++
 	}
+	fmt.Println(nums)
 
 	if length%2 == 1 {
 		return float64(nums[length/2])
 	}
 
-	return float64((nums[length/2] + nums[length/2+1]) / 2.0)
+	return float64(nums[length/2]+nums[length/2-1]) / 2.0
 }
+
+// @leet end

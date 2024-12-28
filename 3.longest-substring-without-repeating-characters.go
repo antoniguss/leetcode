@@ -1,5 +1,4 @@
-package main
-
+// @leet start
 func lengthOfLongestSubstring(s string) int {
 	var maxLen int
 	used := make(map[byte]bool)
@@ -20,3 +19,5 @@ func lengthOfLongestSubstring(s string) int {
 	return maxLen
 
 }
+
+// @leet end

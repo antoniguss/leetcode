@@ -1,5 +1,4 @@
-package main
-
+// @leet start
 func twoSum(nums []int, target int) []int {
 	indices := make(map[int]int)
 	for index1, value := range nums {
@@ -12,3 +11,5 @@ func twoSum(nums []int, target int) []int {
 	return []int{-1, -1}
 
 }
+
+// @leet end
