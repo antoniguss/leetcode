@@ -1,3 +1,5 @@
+package main
+
 // @leet start
 func twoSum(nums []int, target int) []int {
 	indices := make(map[int]int)

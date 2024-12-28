@@ -1,3 +1,5 @@
+package main
+
 // @leet start
 func lengthOfLongestSubstring(s string) int {
 	var maxLen int

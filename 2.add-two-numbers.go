@@ -1,13 +1,11 @@
-// @leet start
-/**
- * Definition for singly-linked list.
- */
-// package main
+package main
 
-// type ListNode struct {
-// 	Val  int
-// 	Next *ListNode
-// }
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+// @leet start
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	var c, v1, v2, s int
