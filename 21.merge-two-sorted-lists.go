@@ -1,5 +1,13 @@
 package main
 
+/**
+ * Definition for singly-linked list.
+ */
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 // @leet start
 /**
  * Definition for singly-linked list.
@@ -11,31 +19,42 @@ package main
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 	head := &ListNode{}
-
 	cur := head
 
-	cur1, cur2 := list1, list2
+	for list1 != nil && list2 != nil {
 
-	for cur1 != nil && cur2 != nil {
-
-		if cur1 != nil && cur1.Val >= cur2.Val {
-			cur.Val = cur1.Val
-			cur.Next = &ListNode{}
+		if list1.Val <= list2.Val {
+			cur.Next = &ListNode{list1.Val, nil}
 			cur = cur.Next
 
-			cur1 = cur1.Next
+			list1 = list1.Next
+
 		} else {
-
-			cur.Val = cur2.Val
-			cur.Next = &ListNode{}
+			cur.Next = &ListNode{list2.Val, nil}
 			cur = cur.Next
 
-			cur1 = cur1.Next
+			list2 = list2.Next
 		}
 
 	}
 
-	return head
+	for list1 != nil {
+		cur.Next = &ListNode{list1.Val, nil}
+		cur = cur.Next
+
+		list1 = list1.Next
+
+	}
+
+	for list2 != nil {
+		cur.Next = &ListNode{list2.Val, nil}
+		cur = cur.Next
+
+		list2 = list2.Next
+
+	}
+
+	return head.Next
 
 }
 
@@ -44,4 +63,3 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 func main() {
 
 }
-
